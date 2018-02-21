@@ -3,64 +3,86 @@
   
   <div class="col-10 col-md-8" >
       <h2>Añadir nuevo proveedor</h2>
-  <form>
+  <form (ngSubmit)="onSubmit()" #formpro="ngForm">
     <div class="form-group">
       <label for="nombre">Nombre</label>
       <input type="text"
               class="form-control"
-              id="nombre">
+              id="nombre"
+              ngModel
+              name="nombre">
+    </div>
+    <div class="form-group">
+      <label for="cif">CIF</label>
+      <input type="text"
+             class="form-control"
+             id="cif"
+             ngModel
+             name="cif">
     </div>
     <div class="form-group">
       <label for="direccion">Direccion</label>
       <input type="text"
              class="form-control"
-             id="direccion">
-    </div>
+             id="direccion"
+             ngModel
+             name="direccion">
+    </div> 
     <div class="form-group">
-      <label for="CIF">CIF</label>
+      <label for="cp">CP</label>
       <input type="text"
              class="form-control"
-             id="CIF">
-    </div>
-    <div class="form-group">
-      <label for="CP">CP</label>
-      <input type="text"
-             class="form-control"
-                id="CP">
+                id="cp"
+                ngModel
+                name="cp">
     </div>
     <div class="form-group">
       <label for="Localidad">Localidad</label>
       <input type="text"
              class="form-control"
-             id="localidad">
+             id="localidad"
+             ngModel
+             name="localidad">
     </div>
     <div class="form-group">
-      <label for="NoProvincia">Provincia</label>
+      <label for="provincia">Provincia</label>
       <input type="text"
              class="form-control"
-                id="provincia">
+             id="provincia"
+             ngModel
+             name="provincia">
     </div>
     <div class="form-group">
-      <label for="Telefono">Telefono</label>
+      <label for="telefono">Telefono</label>
       <input type="number"
              class="form-control"
-             id="telefono">
+             id="telefono"
+             ngModel
+             name="telefono">
     </div>
     <div class="form-group">
       <label for="email">Correo Electronico</label>
       <input type="text"
              class="form-control"
-             id="email">
+             id="email"
+             ngModel
+             name="email">
     </div>
     <div class="form-group">
-      <label for="Contacto">Contacto</label>
+      <label for="contacto">Contacto</label>
       <input type="text"
              class="form-control"
-             id="contacto">
+             id="contacto"
+             ngModel
+             name="contacto">
     </div>
     <button type="submit"
             class="btn btn-success">Añadir Proveedor</button>
   </form>
+  <hr>
+  <pre>
+    {{ proveedor | json }}
+  </pre>
 </div>
  
   <div class="col col-md"></div>
