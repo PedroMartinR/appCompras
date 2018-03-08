@@ -48,6 +48,7 @@ onSubmit() {
   .subscribe(newpres => {
 
   });
+  this.presupuestoForm.reset();
 }
 
 savePresupuesto() {
