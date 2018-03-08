@@ -37,7 +37,7 @@
                 <i class="fa fa-check-circle check" *ngIf="email.valid"></i>
                 <i class="fa fa-exclamation-circle uncheck" *ngIf="email.invalid && email.touched"></i>
                 <input type="text" class="form-control" id="email" ngModel name="email" required email #email="ngModel">
-                <p class="alert aler-danger" *ngIf="email.invalid && email.touched">
+                <p class="alert alert-danger" *ngIf="email.invalid && email.touched">
                     Por favor introduzca una direccion de correo valida
                 </p>
             </div>
