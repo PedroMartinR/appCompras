@@ -58,6 +58,7 @@ this.presupuestoForm.valueChanges.subscribe(valor => {
     this.presupuesto = this.savePresupuesto();
     this.presupuestoService.putPresupuesto(this.presupuesto, this.id)
     .subscribe(newpres => {
+      this.router.navigate(['/presupuestos']);
     });
     this.presupuestoForm.reset();
   }
