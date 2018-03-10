@@ -6,7 +6,7 @@ import 'rxjs/Rx';
 export class PresupuestosService {
 
   presURL = 'https://appcompras-db249.firebaseio.com/presupuestos.json';
-  preURL = 'https://appcompras-db249.firebaseio.com//presupuestos';
+  preURL = 'https://appcompras-db249.firebaseio.com/presupuestos';
 
 
   constructor(private http: Http) { }
