@@ -52,7 +52,7 @@ this.presupuestoForm.valueChanges.subscribe(valor => {
   this.presupuestoForm.value.iva = this.base * this.tipo;
   this.presupuestoForm.value.total = this.base + (this.base * this.tipo);
 });
-  }
+}
 
   onSubmit() {
     this.presupuesto = this.savePresupuesto();
