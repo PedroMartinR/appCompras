@@ -4,16 +4,35 @@
   <thead>
    <tr class="filters">
      <th>Nombre</th>
-     <th>Correo electronico</th>
+     <th>Cif</th>
+     <th>Direccion</th>
+     <th>CP</th>
+     <th>Localidad</th>
+     <th>Provincia</th>
      <th>Telefono</th>
+     <th>Correo electronico</th>
+     <th>Contacto</th>
    </tr> 
   </thead>
   <tbody>
     <tr *ngFor="let proveedor of proveedores">
       <td>{{ proveedor.nombre }}</td>
-      <td><a href="{{ proveedor.email }}">{{ proveedor.email }}</a></td>
+      <td>{{ proveedor.cif }}</td>
+      <td>{{ proveedor.direccion }}</td>
+      <td>{{ proveedor.cp }}</td>
+      <td>{{ proveedor.localidad }}</td>
+      <td>{{ proveedor.provincia }}</td>
       <td>{{ proveedor.telefono }}</td>
+      <td>{{ proveedor.email }}</td>
+      <td>{{ proveedor.contacto }}</td>
+      <td>
+        <button type="button" class="btn btn-success"
+        routerLink="/editpro/{{ proveedor.id$ }}"> Editar </button>
+      </td>
     </tr>
   </tbody>
   
 </table>
+
+
+    

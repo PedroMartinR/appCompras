@@ -15,6 +15,7 @@ import { AddpresComponent } from './presupuestos/addpres/addpres.component';
 import { PresupuestosService } from './servicios/presupuestos.service';
 import { PresupuestosComponent } from './presupuestos/presupuestos/presupuestos.component';
 import { EditpresComponent } from './presupuestos/editpres/editpres.component';
+import { EditproveeComponent } from './proveedores/editprovee/editprovee.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -35,7 +36,8 @@ const routes: Routes = [
     AddproveeComponent,
     AddpresComponent,
     PresupuestosComponent,
-    EditpresComponent
+    EditpresComponent,
+    EditproveeComponent
   ],
   imports: [
     BrowserModule,

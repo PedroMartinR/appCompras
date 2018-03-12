@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
+// tslint:disable-next-line:import-blacklist
 import 'rxjs/Rx';
 
 @Injectable()
@@ -21,7 +22,7 @@ export class PresupuestosService {
       .map( res => {
         console.log(res.json());
         return res.json();
-        })
+        });
   }
 
   getPresupuestos() {
@@ -48,7 +49,7 @@ export class PresupuestosService {
       .map( res => {
         console.log(res.json());
         return res.json();
-        })
+        });
   }
 
 }

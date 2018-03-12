@@ -3,61 +3,57 @@
 
     <div class="col-10 col-md-8">
         <h2>Añadir nuevo proveedor</h2>
-        <form (ngSubmit)="onSubmit()" #formpro="ngForm">
+        <form [formGroup]="proveedorForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" id="nombre" ngModel name="nombre">
+                <input type="text" class="form-control" id="nombre" formControlName="nombre">
             </div>
             <div class="form-group">
                 <label for="cif">CIF</label>
-                <input type="text" class="form-control" id="cif" ngModel name="cif">
+                <input type="text" class="form-control" id="cif" formControlName="cif">
             </div>
             <div class="form-group">
                 <label for="direccion">Direccion</label>
-                <input type="text" class="form-control" id="direccion" ngModel name="direccion">
+                <input type="text" class="form-control" id="direccion" formControlName="direccion">
             </div>
             <div class="form-group">
                 <label for="cp">CP</label>
-                <input type="text" class="form-control" id="cp" ngModel name="cp">
+                <input type="text" class="form-control" id="cp" formControlName="cp">
             </div>
             <div class="form-group">
                 <label for="Localidad">Localidad</label>
-                <input type="text" class="form-control" id="localidad" ngModel name="localidad">
+                <input type="text" class="form-control" id="localidad" formControlName="localidad">
             </div>
             <div class="form-group">
                 <label for="provincia">Provincia</label>
-                <input type="text" class="form-control" id="provincia" ngModel name="provincia">
+                <input type="text" class="form-control" id="provincia" formControlName="provincia">
             </div>
             <div class="form-group">
                 <label for="telefono">Telefono</label>
-                <input type="number" class="form-control" id="telefono" ngModel name="telefono">
+                <input type="number" class="form-control" id="telefono" formControlName="telefono">
             </div>
             <div class="form-group">
                 <label for="email">Correo Electronico</label>
                 <i class="fa fa-check-circle check" *ngIf="email.valid"></i>
                 <i class="fa fa-exclamation-circle uncheck" *ngIf="email.invalid && email.touched"></i>
-                <input type="text" class="form-control" id="email" ngModel name="email" required email #email="ngModel">
+                <input type="text" class="form-control" id="email" formControlName="email" required email>
                 <p class="alert alert-danger" *ngIf="email.invalid && email.touched">
                     Por favor introduzca una direccion de correo valida
                 </p>
             </div>
             <div class="form-group">
                 <label for="contacto">Contacto</label>
-                <input type="text" class="form-control" id="contacto" ngModel name="contacto">
+                <input type="text" class="form-control" id="contacto" formControlName="contacto">
             </div>
             <button type="submit" class="btn btn-success" [disabled]="!formpro.valid">
               Añadir Proveedor
             </button>
+            <a class="btn btn-danger" routerLink="/proveedores">Cancelar</a>
             <p class="alert alert-danger" *ngIf="!formpro.valid">
                 Por favor complete todos los campos obligatorios
             </p>
         </form>
-        <hr>
-        <h4>Estado dirty: {{ formpro.controls.email.dirty }}</h4>
-        <h4>Estado pristine: {{ formpro.controls.email.pristine }}</h4>
-        <h4>Estado touched: {{ formpro.controls.email.touched }}</h4>
-        <h4>Estado valid: {{ formpro.controls.email.valid }}</h4>
-        <h4>Estado invalid: {{ formpro.controls.email.invalid }}</h4>
+
     </div>
 
     <div class="col col-md"></div>

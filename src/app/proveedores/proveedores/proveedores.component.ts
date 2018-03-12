@@ -8,12 +8,19 @@ import { ProveedoresService } from '../../servicios/proveedores.service';
 
 export class ProveedoresComponent implements OnInit {
 
-  proveedores: any;
+  proveedores: any[] = [];
 
-  constructor(private proveedoresService: ProveedoresService)  { }
-
-  ngOnInit() {
-    this.proveedores = this.proveedoresService.getProveedores();
+  constructor(private proveedoresService: ProveedoresService)  {
+    this.proveedoresService.getProveedores()
+    .subscribe(proveedores => {
+      // tslint:disable-next-line:forin
+      for (const id$ in proveedores) {
+        const p = proveedores[id$];
+        p.id$ = id$;
+        this.proveedores.push(proveedores[id$]);
   }
-
+});
+  }
+  ngOnInit() {
+  }
 }
