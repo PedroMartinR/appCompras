@@ -31,7 +31,7 @@ export class PresupuestosService {
       .map( res => res.json());
     }
 
-  getPresupuesto ( id$: string ) {
+  getPresupuesto( id$: string ) {
     const url = `${ this.preURL }/${ id$ }.json`;
     return this.http.get( url )
       .map( res => res.json());
