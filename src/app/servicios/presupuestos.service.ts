@@ -51,5 +51,10 @@ export class PresupuestosService {
         return res.json();
         });
   }
+  delPresupuesto ( id$: string) {
+    const url = '${this.preURL}/${id$}.json';
+    return this.http.delete( url)
+    .map (res => res.json() );
+  }
 
 }
