@@ -50,6 +50,10 @@ export class ProveedoresService {
         console.log(res.json());
         return res.json();
         });
+      }
+  delProveedor ( id$: string) {
+    const url = `${ this.proURL }/${ id$ }.json`;
+    return this.http.delete( url)
+    .map (res => res.json() );
   }
-
 }

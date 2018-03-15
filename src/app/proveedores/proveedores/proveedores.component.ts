@@ -23,4 +23,19 @@ export class ProveedoresComponent implements OnInit {
   }
   ngOnInit() {
   }
+  eliminarPoveedor( id$ ) {
+    this.proveedoresService.delProveedor(id$)
+    .subscribe ( res => {
+      this.proveedores = [];
+      this.proveedoresService.getProveedores()
+      .subscribe(proveedores => {
+        // tslint:disable-next-line:forin
+        for ( const id$ in proveedores) {
+          const p = proveedores[id$];
+          p.id$ = id$;
+         this.proveedores.push(proveedores[id$]);
+        }
+      });
+    });
+  }
 }

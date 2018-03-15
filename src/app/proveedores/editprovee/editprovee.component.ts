@@ -22,7 +22,7 @@ export class EditproveeComponent implements OnInit {
   telefono: any;
   email: any;
   contacto: any;
-  id: any;
+  id: string;
 
 
   constructor(private pf: FormBuilder,
