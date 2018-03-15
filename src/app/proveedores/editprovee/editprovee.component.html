@@ -1,65 +1,65 @@
 <div class="row">
-  <div class="col col-md"></div>
-  <div class="col-10 col-md-8">
-      <h2>Editar proveedor</h2>
-      <a class="btn btn-primary float-md-right" routerLink="/proveedores">Regresar al listado</a>
-      <form [formGroup]="proveedorForm" (ngSubmit)="onSubmit()">
-          <div class="form-group">
-              <label for="nombre">Nombre</label>
-              <i class="fa fa-check-circle check" *ngIf="proveedorForm.controls.nombre.valid"></i>
-              <i class="fa fa-exclamation-circle uncheck" *ngIf="proveedorForm.controls.nombre.invalid &&
+    <div class="col col-md"></div>
+    <div class="col-10 col-md-8">
+        <h2>Editar proveedor</h2>
+        <a class="btn btn-primary float-md-right" routerLink="/proveedores">Regresar al listado</a>
+        <form [formGroup]="proveedorForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <i class="fa fa-check-circle check" *ngIf="proveedorForm.controls.nombre.valid"></i>
+                <i class="fa fa-exclamation-circle uncheck" *ngIf="proveedorForm.controls.nombre.invalid &&
              proveedorForm.controls.nombre.touched"></i>
-              <input type="text" class="form-control" id="nombre" formControlName="nombre" [(ngModel)]="proveedor.nombre">
-              <p class="alert alert-danger" *ngIf="proveedorForm.controls.nombre.invalid &&
+                <input type="text" class="form-control" id="nombre" formControlName="nombre" [(ngModel)]="proveedor.nombre">
+                <p class="alert alert-danger" *ngIf="proveedorForm.controls.nombre.invalid &&
                         proveedorForm.controls.nombre.touched">El campo nombre es obligatorio</p>
-          </div>
-          <div class="form-group">
-              <label for="cif">CIF</label>
-              <input type="text" class="form-control" id="cif" formControlName="cif" [(ngModel)]="proveedor.cif">
-          </div>
-          <div class="form-group">
-              <label for="direccion">Direccion</label>
-              <input type="text" class="form-control" id="direccion" formControlName="direccion" [(ngModel)]="proveedor.direccion">
-          </div>
-          <div class="form-group">
-              <label for="cp">CP</label>
-              <input type="text" class="form-control" id="cp" formControlName="cp" [(ngModel)]="proveedor.cp">
-          </div>
-          <div class="form-group">
-              <label for="Localidad">Localidad</label>
-              <input type="text" class="form-control" id="localidad" formControlName="localidad" [(ngModel)]="proveedor.localidad">
-          </div>
-          <div class="form-group">
-              <label for="provincia">Provincia</label>
-              <input type="text" class="form-control" id="provincia" formControlName="provincia" [(ngModel)]="proveedor.provincia">
-          </div>
-          <div class="form-group">
-              <label for="telefono">Telefono</label>
-              <input type="number" class="form-control" id="telefono" formControlName="telefono" [(ngModel)]="proveedor.telefono">
-          </div>
-          <div class="form-group">
-              <label for="email">Correo Electronico</label>
-              <i class="fa fa-check-circle check" *ngIf="proveedorForm.controls.email.valid"></i>
-              <i class="fa fa-exclamation-circle uncheck" *ngIf="proveedorForm.controls.email.invalid && proveedorForm.controls.email.touched"></i>
-              <input type="text" class="form-control" id="email" formControlName="email" [(ngModel)]="proveedor.email" >
-              <p class="alert alert-danger" *ngIf="proveedorForm.controls.email.invalid && proveedorForm.controls.email.touched">
-                  Por favor introduzca una direccion de correo valida
-              </p>
-          </div>
-          <div class="form-group">
-              <label for="contacto">Contacto</label>
-              <input type="text" class="form-control" id="contacto" formControlName="contacto" [(ngModel)]="proveedor.contacto">
-          </div>
-          <button type="submit" class="btn btn-success" [disabled]="!proveedorForm.valid">
+            </div>
+            <div class="form-group">
+                <label for="cif">CIF</label>
+                <input type="text" class="form-control" id="cif" formControlName="cif" [(ngModel)]="proveedor.cif">
+            </div>
+            <div class="form-group">
+                <label for="direccion">Direccion</label>
+                <input type="text" class="form-control" id="direccion" formControlName="direccion" [(ngModel)]="proveedor.direccion">
+            </div>
+            <div class="form-group">
+                <label for="cp">CP</label>
+                <input type="text" class="form-control" id="cp" formControlName="cp" [(ngModel)]="proveedor.cp">
+            </div>
+            <div class="form-group">
+                <label for="Localidad">Localidad</label>
+                <input type="text" class="form-control" id="localidad" formControlName="localidad" [(ngModel)]="proveedor.localidad">
+            </div>
+            <div class="form-group">
+                <label for="provincia">Provincia</label>
+                <input type="text" class="form-control" id="provincia" formControlName="provincia" [(ngModel)]="proveedor.provincia">
+            </div>
+            <div class="form-group">
+                <label for="telefono">Telefono</label>
+                <input type="number" class="form-control" id="telefono" formControlName="telefono" [(ngModel)]="proveedor.telefono">
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electronico</label>
+                <i class="fa fa-check-circle check" *ngIf="proveedorForm.controls.email.valid"></i>
+                <i class="fa fa-exclamation-circle uncheck" *ngIf="proveedorForm.controls.email.invalid && proveedorForm.controls.email.touched"></i>
+                <input type="text" class="form-control" id="email" formControlName="email" [(ngModel)]="proveedor.email">
+                <p class="alert alert-danger" *ngIf="proveedorForm.controls.email.invalid && proveedorForm.controls.email.touched">
+                    Por favor introduzca una direccion de correo valida
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="contacto">Contacto</label>
+                <input type="text" class="form-control" id="contacto" formControlName="contacto" [(ngModel)]="proveedor.contacto">
+            </div>
+            <button type="submit" class="btn btn-success" [disabled]="!proveedorForm.valid">
             Guardar cambios
           </button>
-          <a class="btn btn-danger" routerLink="/proveedores">Cancelar</a>
-          <p class="alert alert-danger" *ngIf="!proveedorForm.valid">
-              Por favor complete todos los campos obligatorios
-          </p>
-      </form>
+            <a class="btn btn-danger" routerLink="/proveedores">Cancelar</a>
+            <p class="alert alert-danger" *ngIf="!proveedorForm.valid">
+                Por favor complete todos los campos obligatorios
+            </p>
+        </form>
 
-  </div>
+    </div>
 
-  <div class="col col-md"></div>
+    <div class="col col-md"></div>
 </div>

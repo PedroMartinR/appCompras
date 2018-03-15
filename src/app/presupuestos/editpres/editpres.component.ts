@@ -13,6 +13,7 @@ export class EditpresComponent implements OnInit {
 
   presupuestoForm: FormGroup;
   presupuesto: any;
+  proveedor: any;
   base: any;
   tipo: any;
   iva: any = 0;

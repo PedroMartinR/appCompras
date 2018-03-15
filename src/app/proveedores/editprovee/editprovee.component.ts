@@ -9,8 +9,6 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./editprovee.component.css']
 })
 export class EditproveeComponent implements OnInit {
-
-
   proveedorForm: FormGroup;
   proveedor: any;
   name: any;
@@ -56,7 +54,7 @@ export class EditproveeComponent implements OnInit {
 
   onChanges(): void {
 this.proveedorForm.valueChanges.subscribe(valor => {
-  this.proveedor = valor.proveedor;
+
 });
   }
 
