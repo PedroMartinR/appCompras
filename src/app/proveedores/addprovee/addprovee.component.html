@@ -6,12 +6,12 @@
         <form [formGroup]="proveedorForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label for="nombre">Nombre</label>
-                <i class="fa fa-check-circle check" *ngIf="proveedor.controls.nombre.valid"></i>
-                <i class="fa fa-exclamation-circle uncheck" *ngIf="proveedor.controls.nombre.invalid &&
-               proveedor.controls.nombre.touched"></i>
+                <i class="fa fa-check-circle check" *ngIf="proveedorForm.controls.nombre.valid"></i>
+                <i class="fa fa-exclamation-circle uncheck" *ngIf="proveedorForm.controls.nombre.invalid &&
+               proveedorForm.controls.nombre.touched"></i>
                 <input type="text" class="form-control" id="nombre" formControlName="nombre">
-                <p class="alert alert-danger" *ngIf="proveedor.controls.nombre.invalid &&
-                         proveedor.controls.nombre.touched">El campo nombre es obligatorio</p>
+                <p class="alert alert-danger" *ngIf="proveedorForm.controls.nombre.invalid &&
+                         proveedorForm.controls.nombre.touched">El campo nombre es obligatorio</p>
             </div>
             <div class="form-group">
                 <label for="cif">CIF</label>
@@ -39,10 +39,10 @@
             </div>
             <div class="form-group">
                 <label for="email">Correo Electronico</label>
-                <i class="fa fa-check-circle check" *ngIf="proveedor.controls.email.valid"></i>
-                <i class="fa fa-exclamation-circle uncheck" *ngIf="proveedor.controls.email.invalid && proveedor.controls.email.touched"></i>
+                <i class="fa fa-check-circle check" *ngIf="proveedorForm.controls.email.valid"></i>
+                <i class="fa fa-exclamation-circle uncheck" *ngIf="proveedorForm.controls.email.invalid && proveedorForm.controls.email.touched"></i>
                 <input type="text" class="form-control" id="email" formControlName="email" required email>
-                <p class="alert alert-danger" *ngIf="proveedor.controls.email.invalid && proveedor.controls.email.touched">
+                <p class="alert alert-danger" *ngIf="proveedorForm.controls.email.invalid && proveedorForm.controls.email.touched">
                     Por favor introduzca una direccion de correo valida
                 </p>
             </div>

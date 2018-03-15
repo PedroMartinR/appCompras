@@ -16,6 +16,7 @@ import { PresupuestosService } from './servicios/presupuestos.service';
 import { PresupuestosComponent } from './presupuestos/presupuestos/presupuestos.component';
 import { EditpresComponent } from './presupuestos/editpres/editpres.component';
 import { EditproveeComponent } from './proveedores/editprovee/editprovee.component';
+import { RegistroComponent } from './autenticacion/registro/registro.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'presupuestos', component: PresupuestosComponent },
   { path: 'editpres/:id', component: EditpresComponent },
   { path: 'editprovee/:id', component: EditproveeComponent},
+  { path: 'registro', component: RegistroComponent},
   { path: '**', component: InicioComponent }
 ];
 
@@ -38,7 +40,8 @@ const routes: Routes = [
     AddpresComponent,
     PresupuestosComponent,
     EditpresComponent,
-    EditproveeComponent
+    EditproveeComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,

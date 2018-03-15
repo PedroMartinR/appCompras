@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ProveedoresService } from '../../servicios/proveedores.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class AddproveeComponent implements OnInit {
   contacto: any;
 
 
-  constructor(private pf: FormBuilder,
+  constructor(private pf: FormBuilder, private router: Router,
               private proveedoresService: ProveedoresService) { }
 
   ngOnInit() {
@@ -52,9 +53,9 @@ onSubmit() {
   this.proveedor = this.saveProveedor();
   this.proveedoresService.postProveedor(this.proveedor)
   .subscribe(newpro => {
-
+    this.router.navigate(['/proveedores']);
   });
-  this.proveedorForm.reset();
+    this.proveedorForm.reset();
 }
 
 saveProveedor() {
