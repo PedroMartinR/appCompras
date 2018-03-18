@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AutenticacionService } from './servicios/autenticacion.service';
 
 import { AppComponent } from './app.component';
 import {ProveedoresService } from './servicios/proveedores.service';
@@ -50,7 +51,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [ProveedoresService, PresupuestosService],
+  providers: [ProveedoresService, PresupuestosService, AutenticacionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
