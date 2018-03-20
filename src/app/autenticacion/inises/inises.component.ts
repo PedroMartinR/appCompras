@@ -10,28 +10,55 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class InisesComponent implements OnInit {
 
-loginForm: FormGroup;
-userdata: any;
-  
-  constructor(private formBuilder: FormBuilder, private autenticacionService: AutenticacionService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute) { }
+  loginForm: FormGroup;
+  userdata: any;
+
+  mensaje = false;
+
+  constructor(private formBuilder: FormBuilder,
+              private autService: AutenticacionService,
+              private router: Router,
+              private activatedRouter: ActivatedRoute
+              ) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      'email': ['', [ Validators.required, Validators.email]],
-      'password': ['', [ Validators.required, Validators.pattern('^(?=.*[0-9])(?=.*[a-z])([a-zA-Z0-9]+)$'), Validators.minLength(6)]]
+       'email': ['', [
+           Validators.required,
+           Validators.email
+         ]
+       ],
+       'password': ['', [
+         Validators.required,
+         Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$'),
+         Validators.minLength(6)
+          ]
+        ]
     });
   }
+
+  isAuth() {
+     return this.autService.isAuthenticated();
+  }
+
   onSubmit() {
     this.userdata = this.saveUserdata();
-   this.autenticacionService.inicioSesion(this.userdata);
+    this.autService.inicioSesion(this.userdata);
+    setTimeout(() => {
+      if (this.isAuth() === false) {
+        this.mensaje = true;
+      }
+    }, 2000);
   }
   saveUserdata() {
+
     const saveUserdata = {
+
       email: this.loginForm.get('email').value,
-      password: this.loginForm.get('password').value
-  };
+      password: this.loginForm.get('password').value,
+
+    };
     return saveUserdata;
   }
+
 }
