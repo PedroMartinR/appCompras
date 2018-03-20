@@ -5,6 +5,7 @@ import { FormsModule, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AutenticacionService } from './servicios/autenticacion.service';
+import { GuardService } from './servicios/guard.service';
 
 import { AppComponent } from './app.component';
 import {ProveedoresService } from './servicios/proveedores.service';
@@ -22,12 +23,18 @@ import { InisesComponent } from './autenticacion/inises/inises.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
-  { path: 'proveedores', component: ProveedoresComponent },
-  { path: 'addprovee', component: AddproveeComponent },
-  { path: 'addpres', component: AddpresComponent },
-  { path: 'presupuestos', component: PresupuestosComponent },
-  { path: 'editpres/:id', component: EditpresComponent },
-  { path: 'editprovee/:id', component: EditproveeComponent},
+  { path: 'proveedores', component: ProveedoresComponent,
+    canActivate: [GuardService] },
+  { path: 'addprovee', component: AddproveeComponent,
+  canActivate: [GuardService]},
+  { path: 'addpres', component: AddpresComponent,
+  canActivate: [GuardService] },
+  { path: 'presupuestos', component: PresupuestosComponent,
+  canActivate: [GuardService] },
+  { path: 'editpres/:id', component: EditpresComponent,
+  canActivate: [GuardService] },
+  { path: 'editprovee/:id', component: EditproveeComponent,
+  canActivate: [GuardService] },
   { path: 'registro', component: RegistroComponent},
   { path: 'inises', component: InisesComponent},
   { path: '**', component: InicioComponent }
@@ -54,7 +61,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [ProveedoresService, PresupuestosService, AutenticacionService],
+  providers: [ProveedoresService, PresupuestosService, AutenticacionService, GuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
