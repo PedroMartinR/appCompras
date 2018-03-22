@@ -7,7 +7,7 @@ export class GuardService implements CanActivate {
 
   constructor(private autenticacionService: AutenticacionService) { }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot){
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     return this.autenticacionService.isAuthenticated();
   }
 

@@ -5,10 +5,10 @@ import { FormsModule, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AutenticacionService } from './servicios/autenticacion.service';
-import { GuardService } from './servicios/guard.service';
+
 
 import { AppComponent } from './app.component';
-import {ProveedoresService } from './servicios/proveedores.service';
+import { ProveedoresService } from './servicios/proveedores.service';
 import { ProveedoresComponent } from './proveedores/proveedores/proveedores.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { HeaderComponent } from './header/header.component';
@@ -20,6 +20,9 @@ import { EditpresComponent } from './presupuestos/editpres/editpres.component';
 import { EditproveeComponent } from './proveedores/editprovee/editprovee.component';
 import { RegistroComponent } from './autenticacion/registro/registro.component';
 import { InisesComponent } from './autenticacion/inises/inises.component';
+import { GuardService } from './servicios/guard.service';
+import { FacturasModule } from './facturas/facturas.module';
+
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -59,7 +62,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    FacturasModule
   ],
   providers: [ProveedoresService, PresupuestosService, AutenticacionService, GuardService],
   bootstrap: [AppComponent]

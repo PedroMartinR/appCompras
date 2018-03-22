@@ -57,11 +57,13 @@ saveUserdata() {
 onValueChanged(data?: any) {
   if (!this.registroForm) { return; }
   const form = this.registroForm;
+  // tslint:disable-next-line:forin
   for (const field in this.erroresForm) {
     this.erroresForm[field] = '';
     const control = form.get(field);
     if (control && control.dirty && !control.valid) {
       const messages = this.mensajesValidacion[field];
+      // tslint:disable-next-line:forin
       for (const key in control.errors) {
         this.erroresForm[field] += messages[key] + ' ';
        }
