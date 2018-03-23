@@ -30,10 +30,10 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
 
   ],
-  declarations: [AddfraComponent, FacturasService, EdifraComponent, GuardService ],
+  declarations: [AddfraComponent, FacturasService, EdifraComponent, GuardService, FacturasService ],
   providers: []
 })
 export class FacturasModule { }

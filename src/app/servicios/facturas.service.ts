@@ -7,19 +7,19 @@ import 'rxjs/Rx';
 export class FacturasService {
 
 
-  presURL = 'https://appcompras-db249.firebaseio.com/facturas.json';
-  preURL = 'https://appcompras-db249.firebaseio.com/facturas';
+  frajURL = 'https://appcompras-db249.firebaseio.com/facturas.json';
+  fraURL = 'https://appcompras-db249.firebaseio.com/facturas';
 
 
   constructor(private http: Http) { }
 
   postfactura( factura: any) {
-    const newpres = JSON.stringify(factura);
+    const newfraj = JSON.stringify(factura);
     const headers = new Headers({
       'Content-Type': 'application/json'
     });
 
-    return this.http.post( this.presURL, newpres, {headers})
+    return this.http.post( this.frajURL, newfraj, {headers})
       .map( res => {
         console.log(res.json());
         return res.json();
@@ -28,32 +28,32 @@ export class FacturasService {
 
   getfacturas() {
 
-    return this.http.get( this.presURL )
+    return this.http.get( this.frajURL )
       .map( res => res.json());
     }
 
   getfactura( id$: string ) {
-    const url = `${ this.preURL }/${ id$ }.json`;
+    const url = `${ this.fraURL }/${ id$ }.json`;
     return this.http.get( url )
       .map( res => res.json());
     }
 
   putfactura( factura: any, id$: string) {
-    const newpre = JSON.stringify(factura);
+    const newfra = JSON.stringify(factura);
     const headers = new Headers({
       'Content-Type': 'application/json'
     });
 
-    const url = `${ this.preURL }/${ id$ }.json`;
+    const url = `${ this.fraURL }/${ id$ }.json`;
 
-    return this.http.put( url, newpre, {headers})
+    return this.http.put( url, newfra, {headers})
       .map( res => {
         console.log(res.json());
         return res.json();
         });
   }
   delfactura ( id$: string) {
-    const url = `${ this.preURL }/${ id$ }.json`;
+    const url = `${ this.fraURL }/${ id$ }.json`;
     return this.http.delete( url)
     .map (res => res.json() );
   }

@@ -22,6 +22,8 @@ import { RegistroComponent } from './autenticacion/registro/registro.component';
 import { InisesComponent } from './autenticacion/inises/inises.component';
 import { GuardService } from './servicios/guard.service';
 import { FacturasModule } from './facturas/facturas.module';
+import { FacturasService } from './servicios/facturas.service';
+
 
 
 const routes: Routes = [
@@ -65,7 +67,7 @@ const routes: Routes = [
     HttpModule,
     FacturasModule
   ],
-  providers: [ProveedoresService, PresupuestosService, AutenticacionService, GuardService],
+  providers: [ProveedoresService, PresupuestosService, AutenticacionService, , FacturasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
