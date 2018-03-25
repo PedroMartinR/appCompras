@@ -9,7 +9,7 @@ import { FormsModule, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { GuardService } from '../servicios/guard.service';
-import { FacturasService } from '../servicios/facturas.service';
+
 
 
 
@@ -30,10 +30,10 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
+    HttpModule
 
   ],
-  declarations: [AddfraComponent, FacturasService, EdifraComponent, GuardService, FacturasService ],
+  declarations: [ ],
   providers: []
 })
 export class FacturasModule { }

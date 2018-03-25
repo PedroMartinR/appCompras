@@ -13,7 +13,7 @@ export class FacturasComponent implements OnInit {
   facturas: any[] = [];
 
   constructor(private facturasService: FacturasService) {
-    this.facturasService.getfacturas()
+    this.facturasService.getFacturas()
     .subscribe(facturas => {
       // tslint:disable-next-line:forin
       for (const id$ in facturas) {
@@ -27,10 +27,10 @@ export class FacturasComponent implements OnInit {
   ngOnInit() {
   }
   eliminarfactura(id$) {
-    this.facturasService.delfactura(id$)
+    this.facturasService.delFactura(id$)
     .subscribe ( res => {
       this.facturas = [];
-      this.facturasService.getfacturas()
+      this.facturasService.getFacturas()
       .subscribe(facturas => {
         // tslint:disable-next-line:forin
         for (const id$ in facturas) {

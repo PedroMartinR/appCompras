@@ -23,6 +23,9 @@ import { InisesComponent } from './autenticacion/inises/inises.component';
 import { GuardService } from './servicios/guard.service';
 import { FacturasModule } from './facturas/facturas.module';
 import { FacturasService } from './servicios/facturas.service';
+import { AddfraComponent } from './facturas/facturas/addfra/addfra.component';
+import { EdifraComponent } from './facturas/facturas/edifra/edifra.component';
+import { FacturasComponent } from './facturas/facturas/facturas/facturas.component';
 
 
 
@@ -42,6 +45,12 @@ const routes: Routes = [
   canActivate: [GuardService] },
   { path: 'registro', component: RegistroComponent},
   { path: 'inises', component: InisesComponent},
+  { path: 'addfra', component: AddfraComponent,
+  canActivate: [GuardService] },
+  { path: 'facturas', component: FacturasComponent,
+  canActivate: [GuardService] },
+  { path: 'edifra/:id', component: EdifraComponent,
+  canActivate: [GuardService] },
   { path: '**', component: InicioComponent }
 ];
 
@@ -53,9 +62,12 @@ const routes: Routes = [
     HeaderComponent,
     AddproveeComponent,
     AddpresComponent,
+    AddfraComponent,
     PresupuestosComponent,
+    FacturasComponent,
     EditpresComponent,
     EditproveeComponent,
+    EdifraComponent,
     RegistroComponent,
     InisesComponent
   ],
@@ -67,7 +79,7 @@ const routes: Routes = [
     HttpModule,
     FacturasModule
   ],
-  providers: [ProveedoresService, PresupuestosService, AutenticacionService, , FacturasService],
+  providers: [ProveedoresService, PresupuestosService, AutenticacionService, FacturasService, GuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

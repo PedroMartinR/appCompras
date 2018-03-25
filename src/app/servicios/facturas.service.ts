@@ -13,7 +13,7 @@ export class FacturasService {
 
   constructor(private http: Http) { }
 
-  postfactura( factura: any) {
+  postFactura( factura: any) {
     const newfraj = JSON.stringify(factura);
     const headers = new Headers({
       'Content-Type': 'application/json'
@@ -26,19 +26,19 @@ export class FacturasService {
         });
   }
 
-  getfacturas() {
+  getFacturas() {
 
     return this.http.get( this.frajURL )
       .map( res => res.json());
     }
 
-  getfactura( id$: string ) {
+  getFactura( id$: string ) {
     const url = `${ this.fraURL }/${ id$ }.json`;
     return this.http.get( url )
       .map( res => res.json());
     }
 
-  putfactura( factura: any, id$: string) {
+  putFactura( factura: any, id$: string) {
     const newfra = JSON.stringify(factura);
     const headers = new Headers({
       'Content-Type': 'application/json'
@@ -52,7 +52,7 @@ export class FacturasService {
         return res.json();
         });
   }
-  delfactura ( id$: string) {
+  delFactura ( id$: string) {
     const url = `${ this.fraURL }/${ id$ }.json`;
     return this.http.delete( url)
     .map (res => res.json() );
