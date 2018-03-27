@@ -56,4 +56,10 @@ export class ProveedoresService {
     return this.http.delete( url)
     .map (res => res.json() );
   }
+  getProveedoresSearch(busqueda: string) {
+    const url = `${ this.projURL}?orderBy="nombre"&startAt="${ busqueda }"&endAt="${ busqueda }\uf8ff"`;
+    return this.http.get(url)
+    .map (res => res.json());
+
+  }
 }
