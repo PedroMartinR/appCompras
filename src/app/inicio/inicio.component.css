@@ -45,3 +45,8 @@
 .rectpink:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
 }
+.btn-success, .btn-danger, .btn-primary{
+    height: 25px; 
+    font-size: 12px;
+    padding: 5px;
+}

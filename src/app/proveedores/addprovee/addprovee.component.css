@@ -13,3 +13,8 @@ input.ng-valid.ng-dirty {
 .uncheck {
     color: #A94442;
 }
+.btn-success, .btn-danger, .btn-primary{
+    height: 25px; 
+    font-size: 12px;
+    padding: 5px;
+}

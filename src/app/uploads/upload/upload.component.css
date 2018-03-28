@@ -6,3 +6,9 @@ height: 160px;
 padding-top: 40px;
 text-align: center;
 }
+.btn-success, .btn-danger, .btn-primary{
+    height: 25px; 
+    font-size: 12px;
+    padding: 5px;
+
+}

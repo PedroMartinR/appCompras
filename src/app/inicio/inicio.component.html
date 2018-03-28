@@ -4,11 +4,11 @@
   <div class="text-center" style="margin: 20px" *ngIf="!isAuth()">
     <h4>Inicie sesión para acceder</h4>
   </div>
-  <div class="row" *ngIf="isAuth()">
+  <div class="row" style="margin-right: 20px"*ngIf="isAuth()">
     <div class="col-md-3">
       <a routerLink="/proveedores" style="text-decoration: none">
         <div class="rectorange">
-          <i class="fa fa-address-book-o" style="font-size: 60px"></i>
+          <i class="fa fa-address-book-o" style="font-size: 40px"></i>
           <p style="font-size: 24px; padding-top: 15px">Proveedores</p>
         </div>
       </a>
@@ -16,7 +16,7 @@
     <div class="col-md-3">
       <a routerLink="/presupuestos" style="text-decoration: none">
         <div class="rectgreen">
-          <i class="fa fa-usd" style="font-size: 60px"></i>
+          <i class="fa fa-usd" style="font-size: 40px"></i>
           <p style="font-size: 24px; padding-top: 15px">Presupuestos</p>
         </div>
       </a>
@@ -24,7 +24,7 @@
     <div class="col-md-3">
       <a routerLink="/facturas" style="text-decoration: none">
         <div class="rectviolet">
-          <i class="fa fa-cart-plus" style="font-size: 60px"></i>
+          <i class="fa fa-cart-plus" style="font-size: 40px"></i>
           <p style="font-size: 24px; padding-top: 15px">Facturas</p>
         </div>
       </a>
@@ -32,7 +32,7 @@
     <div class="col-md-3">
       <a routerLink="/contratos" style="text-decoration: none">
         <div class="rectpink">
-          <i class="fa fa-map" style="font-size: 60px"></i>
+          <i class="fa fa-map" style="font-size: 40px"></i>
           <p style="font-size: 24px; padding-top: 15px">Contratos</p>
         </div>
       </a>
