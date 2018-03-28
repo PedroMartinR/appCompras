@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database-deprecated';
 import { FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database-deprecated';
 import * as firebase from 'firebase';
 import { Archivo } from '../uploads/file.modal';
@@ -31,5 +31,10 @@ uploads: FirebaseListObservable<Archivo []>;
   }
 saveFileData(upload: Archivo) {
   this.angularFireDatabase.list(`${this.basePath}/`).push(upload);
+}
+
+getUploads() {
+  this.uploads  = this.angularFireDatabase.list(this.basePath);
+  return this.uploads;
 }
 }

@@ -6,7 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AutenticacionService } from './servicios/autenticacion.service';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { enviroment } from './config/firebase.config';
 
@@ -32,6 +32,8 @@ import { EdifraComponent } from './facturas/facturas/edifra/edifra.component';
 import { FacturasComponent } from './facturas/facturas/facturas/facturas.component';
 import { UploadComponent } from './uploads/upload/upload.component';
 import { LoadfileService } from './servicios/loadfile.service';
+import { ContratosComponent } from './uploads/contratos/contratos.component';
+import { DetalleComponent } from './uploads/detalle/detalle.component';
 
 
 const routes: Routes = [
@@ -58,6 +60,8 @@ const routes: Routes = [
   canActivate: [GuardService] },
   { path: 'edifra/:id', component: EdifraComponent,
   canActivate: [GuardService] },
+  { path: 'contratos', component: ContratosComponent,
+  canActivate: [GuardService] },
   { path: '**', component: InicioComponent }
 ];
 
@@ -77,7 +81,9 @@ const routes: Routes = [
     EdifraComponent,
     RegistroComponent,
     InisesComponent,
-    UploadComponent
+    UploadComponent,
+    ContratosComponent,
+    DetalleComponent
   ],
   imports: [
     BrowserModule,
